@@ -1,0 +1,29 @@
+[
+  {
+    "numero": 3,
+    "slug": "003",
+    "titulo": "GameFlowNews.ai #3: Ideação com IA, NPCs de Memória e QA Autônomo",
+    "data": "2026-09-01",
+    "resumo": "Essa semana no GFN.Ai você vai encontrar: um jeito de validar a ideia de jogo contra o mercado inteiro antes de escrever uma linha de código, gerando o game design document praticamente sozinho. Outro lance maneiro que trazemos é sobre NPC...",
+    "linkedin_url": "",
+    "arquivo": "edicoes/003.md"
+  },
+  {
+    "numero": 2,
+    "slug": "002",
+    "titulo": "GameFlowNews.ai #2: QA Autônomo, Economia Preditiva e Criativos em Escala",
+    "data": "2026-08-24",
+    "resumo": "Essa semana no GFN.Ai você vai encontrar: um jeitinho de deixar a IA simular a jornada completa de um jogador e validar telas dinâmicas sozinha, o que muda bastante a conversa sobre até onde vale a pena manter teste manual roteirizado....",
+    "linkedin_url": "",
+    "arquivo": "edicoes/002.md"
+  },
+  {
+    "numero": 1,
+    "slug": "001",
+    "titulo": "GameFlowNews.ai #1: Edição de Estréia",
+    "data": "2026-08-18",
+    "resumo": "Para quem chegou de paraquedas aqui (creio que ninguém), meu nome é Felipe Fernandes e atuo na indústria de Games há mais de 8 anos. Como Agile Coach minha função principal é sempre foi ser \"o cara de processos\", mas recentemente com essas...",
+    "linkedin_url": "https://www.linkedin.com/pulse/gameflownewsai-1-felipe-fernandes-k87xe/?trackingId=tmoPGCmQQTeCkNBvFiDmUA%3D%3D",
+    "arquivo": "edicoes/001.md"
+  }
+]
