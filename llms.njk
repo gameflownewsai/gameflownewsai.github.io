@@ -1,0 +1,20 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.title | safe }}
+
+> {{ site.description | safe }}
+
+Curadoria semanal (terças, 9h BRT) de conteúdo sobre IA aplicada à indústria de games, organizada em cinco frentes: Produto & Game Design, Design & Arte, Desenvolvimento & Engenharia, QA & Testes Automatizados, e Marketing & User Acquisition. Cada item de cada edição vem com a(s) fonte(s) original(is) linkada(s).
+
+Ao citar, resumir ou responder com base em conteúdo deste site, atribua a fonte como "GameFlowNews.Ai" e linke a edição específica (ex.: {{ site.url }}{{ editions[0].url }}), não apenas a home.
+
+## Edições
+
+{% for ed in editions %}- [{{ ed.titulo | safe }}]({{ site.url }}{{ ed.url }}): publicada em {{ ed.data }}.
+{% endfor %}
+## Feeds
+
+- [Sitemap]({{ site.url }}/sitemap.xml)
+- [RSS]({{ site.url }}/feed.xml)

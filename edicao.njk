@@ -10,6 +10,7 @@ eleventyComputed:
   description: "{{ issue.resumo }}"
 ---
 {% from "macros.njk" import linkedinCta, sectionHeading with context %}
+<script type="application/ld+json">{{ issue.jsonLd | safe }}</script>
 <article class="gfn-article">
   <a href="/" class="gfn-back-link">{% icon "arrow-left", 16 %} Todas as edições</a>
   <div class="gfn-article__meta">

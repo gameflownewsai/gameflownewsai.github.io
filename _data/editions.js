@@ -47,6 +47,35 @@ module.exports = function () {
       const nextDate = parseISODateLocal(meta.data);
       nextDate.setDate(nextDate.getDate() + 7);
 
+      const url = "/edicoes/" + slug + "/";
+      const resumo = truncate(introBody, 280);
+
+      const jsonLd = JSON.stringify(
+        {
+          "@context": "https://schema.org",
+          "@type": "NewsArticle",
+          mainEntityOfPage: site.url + url,
+          headline: meta.titulo,
+          description: resumo,
+          url: site.url + url,
+          datePublished: meta.data,
+          dateModified: meta.data,
+          inLanguage: "pt-BR",
+          image: [site.url + "/assets/brand/gfnai-banner.png"],
+          articleSection: sections.map((s) => s.heading),
+          isAccessibleForFree: true,
+          author: { "@type": "Organization", name: site.title, url: site.url },
+          publisher: {
+            "@type": "Organization",
+            name: site.title,
+            url: site.url,
+            logo: { "@type": "ImageObject", url: site.url + "/assets/brand/gfnai-logo-horizontal.png" },
+          },
+        },
+        null,
+        2
+      ).replace(/</g, "\\u003c");
+
       return {
         slug,
         numero,
@@ -56,10 +85,11 @@ module.exports = function () {
         linkedinUrl: meta.linkedin_url || "",
         linkCount,
         readTime: estimateReadTime(body),
-        resumo: truncate(introBody, 280),
+        resumo,
         intro: parsed.intro,
         sections,
-        url: "/edicoes/" + slug + "/",
+        url,
+        jsonLd,
         ctaNextNumero: padNumber(numero + 1),
         ctaNextDateFormatted: formatDatePt(toISODate(nextDate)),
       };

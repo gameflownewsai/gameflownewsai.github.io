@@ -29,6 +29,11 @@ module.exports = function (eleventyConfig) {
     );
   });
 
+  // Data (YYYY-MM-DD) publicada às 9h BRT -> formato RFC 822 exigido pelo RSS.
+  eleventyConfig.addFilter("rfc822", function (iso) {
+    return new Date(iso + "T09:00:00-03:00").toUTCString();
+  });
+
   return {
     dir: {
       input: ".",
