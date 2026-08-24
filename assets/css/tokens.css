@@ -1,0 +1,133 @@
+/* Design tokens — portados do design system GameFlowNews.Ai (Claude Design). */
+
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+:root{
+/* Slate: o palco escuro da marca (extraído do banner) */
+--slate-950:#14181C;--slate-900:#1C2126;--slate-800:#232A31;--slate-700:#2C343D;
+--slate-600:#3A4552;--slate-500:#47535F;--slate-400:#767D86;--slate-300:#9AA3AC;
+--slate-200:#C7CDD3;--slate-100:#E6E9EC;--slate-050:#F4F6F7;--paper:#EFEFEF;
+
+/* Flow: o gradiente do wordmark, amarelo → roxo */
+--flow-1:#FFD95E;--flow-2:#FBBD66;--flow-3:#FBA964;--flow-4:#D1888B;--flow-5:#A366A9;
+--gold-600:#CE8818;--gold-500:#BEA047;--gold-300:#F69F69;
+
+/* Accents de cada seção da newsletter */
+--beat-dev:#A366A9;--beat-produto:#D1888B;--beat-design:#FBA964;
+--beat-marketing:#FFD95E;--beat-qa:#74C69D;--beat-ia:#8FB8DE;
+
+/* Status */
+--success:#74C69D;--info:#8FB8DE;--warning:#FFC94D;--danger:#E8705F;
+
+/* Gradientes */
+--grad-flow:linear-gradient(180deg,var(--flow-1) 0%,var(--flow-2) 26%,var(--flow-3) 46%,var(--flow-4) 72%,var(--flow-5) 100%);
+--grad-flow-x:linear-gradient(90deg,var(--flow-1) 0%,var(--flow-3) 45%,var(--flow-5) 100%);
+--grad-flow-warm:linear-gradient(96deg,var(--flow-1) 0%,var(--flow-2) 55%,var(--flow-3) 100%);
+--grad-display:linear-gradient(180deg,var(--flow-1) 0%,var(--flow-4) 100%);
+--grad-display-x:linear-gradient(96deg,var(--flow-1) 0%,var(--flow-3) 100%);
+--display-solid:var(--flow-1);
+--grad-stage:radial-gradient(120% 90% at 55% 12%,#414D5A 0%,#3A4552 45%,#333D48 100%);
+--grad-veil:linear-gradient(180deg,rgba(20,24,28,0) 0%,rgba(20,24,28,.72) 62%,rgba(20,24,28,.94) 100%);
+
+/* Aliases semânticos */
+--surface-stage:var(--grad-stage);
+--surface-page:var(--slate-600);
+--surface-sunken:var(--slate-900);
+--surface-card:rgba(255,255,255,.045);
+--surface-card-hover:rgba(255,255,255,.075);
+--surface-raised:var(--slate-700);
+--surface-inverse:var(--slate-050);
+
+--text-body:var(--paper);
+--text-strong:#FFFFFF;
+--text-muted:var(--slate-300);
+--text-faint:var(--slate-400);
+--text-on-accent:var(--slate-950);
+--text-on-inverse:var(--slate-800);
+--text-link:var(--flow-1);
+--text-link-hover:var(--flow-3);
+
+--border-hairline:rgba(255,255,255,.10);
+--border-strong:rgba(255,255,255,.20);
+--border-gold:var(--gold-600);
+--border-ink:var(--slate-950);
+
+--accent:var(--flow-1);
+--accent-press:var(--flow-2);
+--accent-quiet:rgba(255,217,94,.14);
+--focus-ring:var(--flow-1);
+
+/* Tipografia */
+--font-display:"Arial Rounded MT Bold","Arial Rounded MT","Helvetica Rounded","M PLUS Rounded 1c",system-ui,sans-serif;
+--font-sans:"Archivo","Helvetica Neue",system-ui,-apple-system,sans-serif;
+--font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+--fw-regular:400;--fw-medium:500;--fw-semibold:600;--fw-bold:700;--fw-black:800;
+
+--size-hero:88px;--lh-hero:0.86;--ls-hero:-0.035em;
+--size-display:64px;--lh-display:0.9;--ls-display:-0.03em;
+--size-title:44px;--lh-title:1.0;--ls-title:-0.02em;
+
+--size-h1:34px;--lh-h1:1.1;--ls-h1:-0.02em;
+--size-h2:26px;--lh-h2:1.18;--ls-h2:-0.015em;
+--size-h3:20px;--lh-h3:1.25;--ls-h3:-0.01em;
+
+--size-body-lg:18px;--lh-body-lg:1.6;
+--size-body:16px;--lh-body:1.65;
+--size-body-sm:14px;--lh-body-sm:1.55;
+--size-caption:12px;--lh-caption:1.45;
+
+--size-label:13px;--ls-label:0.08em;
+--size-label-sm:11px;--ls-label-sm:0.12em;
+
+--wordmark-stroke:3px;
+--wordmark-shadow:0 4px 0 rgba(20,24,28,.55),0 18px 34px -10px rgba(12,15,18,.7);
+
+/* Espaçamento */
+--space-0:0;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;
+--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;
+--space-20:80px;--space-24:96px;--space-32:128px;
+--gutter:24px;--gutter-lg:40px;
+--measure:64ch;
+--content-max:1120px;
+--email-max:640px;
+--section-gap:var(--space-16);
+
+/* Raio */
+--r-xs:6px;--r-sm:10px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-pill:999px;
+--radius-control:var(--r-sm);
+--radius-card:var(--r-lg);
+--radius-sheet:var(--r-xl);
+--radius-chip:var(--r-pill);
+--border-width:1px;--border-width-loud:2px;
+
+/* Elevação */
+--shadow-1:0 1px 2px rgba(12,15,18,.45);
+--shadow-2:0 6px 16px -4px rgba(12,15,18,.5);
+--shadow-3:0 20px 48px -12px rgba(12,15,18,.62);
+--shadow-inset-top:inset 0 1px 0 rgba(255,255,255,.07);
+--shadow-inset-field:inset 0 1px 2px rgba(12,15,18,.4);
+--glow-accent:0 0 0 1px rgba(206,136,24,.55),0 8px 26px -8px rgba(255,217,94,.35);
+--glow-focus:0 0 0 3px rgba(255,217,94,.32);
+--blur-veil:blur(14px);
+--blur-glass:blur(22px) saturate(120%);
+
+/* Movimento */
+--ease-out:cubic-bezier(.2,.8,.3,1);
+--ease-in-out:cubic-bezier(.6,0,.3,1);
+--ease-pop:cubic-bezier(.34,1.4,.64,1);
+--dur-instant:90ms;--dur-fast:140ms;--dur:220ms;--dur-slow:340ms;
+--transition-control:background-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out);
+--press-scale:0.975;
+--hover-lift:-2px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--slate-600)}
+body{margin:0;background:var(--surface-page);background-image:var(--grad-stage);background-attachment:fixed;color:var(--text-body);font-family:var(--font-sans);font-size:var(--size-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased;text-wrap:pretty}
+a{color:var(--text-link);text-decoration-color:rgba(255,217,94,.4);text-underline-offset:3px;transition:color var(--dur-fast) var(--ease-out)}
+a:hover{color:var(--text-link-hover);text-decoration-color:currentColor}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;border-radius:var(--r-xs)}
+::selection{background:rgba(163,102,169,.45);color:#fff}
+h1,h2,h3,h4{font-family:var(--font-sans);font-weight:var(--fw-bold);margin:0}
+.gfn-mono-label{font-family:var(--font-mono);font-size:var(--size-label-sm);letter-spacing:var(--ls-label-sm);text-transform:uppercase;color:var(--text-faint)}

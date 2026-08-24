@@ -1,0 +1,79 @@
+---
+layout: base.njk
+title: "GameFlowNews.Ai — a semana de IA na indústria de games"
+description: "Sua dose semanal de conteúdo selecionado sobre IA aplicada à indústria de games: produto, design, desenvolvimento, QA e marketing. Toda terça, 9h BRT."
+---
+{% from "macros.njk" import linkedinCta, sectionHeading with context %}
+<section class="gfn-hero">
+  <div class="gfn-hero__bg">Game
+Flow</div>
+  <div class="gfn-hero__inner">
+    <div class="gfn-hero__mark">{% logo 260, "stacked" %}</div>
+    <div class="gfn-hero__copy">
+      <div class="gfn-hero__kicker">// Terças, 9h BRT · grátis</div>
+      <h1 class="gfn-hero__title">A semana de IA na indústria de games, filtrada</h1>
+      <p class="gfn-hero__lede">Sua dose semanal de conteúdo selecionado para quem vive a indústria de games. Conteúdos para game dev, produto, produção, design, marketing e muito mais.</p>
+      {{ linkedinCta() }}
+    </div>
+  </div>
+</section>
+
+<section class="gfn-section">
+  {{ sectionHeading("// EDIÇÕES", "Tudo o que já saiu") }}
+  <div class="gfn-issues-grid">
+    {% for ed in editions %}
+    <a href="{{ ed.url }}" class="gfn-card gfn-issue-card">
+      <div class="gfn-issue-card__num">
+        <div class="lbl">ED.</div>
+        <div class="num">{{ ed.slug }}</div>
+      </div>
+      <div class="gfn-issue-card__body">
+        <div class="gfn-issue-card__meta">{{ ed.dateFormatted }}</div>
+        <h3>{{ ed.titulo }}</h3>
+        {% if ed.resumo %}<p>{{ ed.resumo }}</p>{% endif %}
+      </div>
+      <span class="gfn-issue-card__chev">{% icon "chevron-right", 20 %}</span>
+    </a>
+    {% endfor %}
+    {% if editions.nextIssue %}
+    <div class="gfn-next-issue">
+      <div class="gfn-next-issue__num">
+        <div class="lbl">ED.</div>
+        <div class="num">{{ editions.nextIssue.numeroPadded }}</div>
+      </div>
+      <div style="flex:1;min-width:0">
+        <div class="gfn-next-issue__date">{{ editions.nextIssue.dateFormatted }}</div>
+        <h3>Próxima edição</h3>
+        <p>Chega às 9h no seu e-mail e aqui, na mesma hora.</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="gfn-beats-section">
+  <div class="gfn-beats-section__inner" id="secoes">
+    {{ sectionHeading("// O QUE VEM EM CADA EDIÇÃO", "Cinco seções, a cadeia inteira de produção") }}
+    <div class="gfn-beats-grid">
+      {% for key in site.beatOrder %}
+      {% set b = site.beats[key] %}
+      <div class="gfn-card gfn-beat-card" style="--gfn-tone:{{ b.color }}">
+        {% icon b.icon, 22 %}
+        <div>
+          <div class="gfn-beat-card__title">{{ b.label }}</div>
+          <div class="gfn-beat-card__text">{{ b.copy }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="gfn-cta-banner">
+  <div class="gfn-cta-banner__bg">.Ai</div>
+  <div class="gfn-cta-banner__inner">
+    <h2>Terça-feira, 9h. Uma leitura, cinco frentes.</h2>
+    <p>Curadoria feita por quem trabalha na indústria. Cada item vem com as fontes na mão.</p>
+    {{ linkedinCta() }}
+  </div>
+</section>

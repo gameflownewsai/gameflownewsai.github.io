@@ -1,0 +1,12 @@
+<header class="gfn-header">
+  <a href="/" class="gfn-header__brand">{% logo 35 %}</a>
+  <nav class="gfn-header__nav">
+    <a href="/"{% if page.url == "/" %} class="is-active"{% endif %}>Edições</a>
+    <a href="/#secoes">Seções</a>
+  </nav>
+  <div class="gfn-header__spacer"></div>
+  <div class="gfn-header__actions">
+    <button class="gfn-icon-btn" aria-label="Feed RSS" title="Feed RSS">{% icon "rss", 18 %}</button>
+    <a class="gfn-btn gfn-btn--primary gfn-btn--sm" href="{{ site.linkedinFollowUrl }}" target="_blank" rel="noopener">Assinar</a>
+  </div>
+</header>

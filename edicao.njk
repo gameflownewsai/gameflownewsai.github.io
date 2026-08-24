@@ -1,0 +1,59 @@
+---
+pagination:
+  data: editions
+  size: 1
+  alias: issue
+permalink: "edicoes/{{ issue.slug }}/index.html"
+layout: base.njk
+eleventyComputed:
+  title: "{{ issue.titulo }} · GameFlowNews.Ai"
+  description: "{{ issue.resumo }}"
+---
+{% from "macros.njk" import linkedinCta, sectionHeading with context %}
+<article class="gfn-article">
+  <a href="/" class="gfn-back-link">{% icon "arrow-left", 16 %} Todas as edições</a>
+  <div class="gfn-article__meta">
+    <div class="gfn-issue-meta">
+      <span class="gfn-issue-meta__item is-accent">{% icon "sparkles", 14 %} Edição #{{ issue.slug }}</span>
+      <span class="gfn-issue-meta__item">{% icon "calendar-days", 14 %} {{ issue.dateFormatted }}</span>
+      <span class="gfn-issue-meta__item">{% icon "link", 14 %} {{ issue.linkCount }} links</span>
+      <span class="gfn-issue-meta__item">{% icon "bookmark", 14 %} {{ issue.readTime }}</span>
+    </div>
+  </div>
+  <h1>{{ issue.titulo }}</h1>
+  <div class="gfn-article__body">
+    {% for p in issue.intro %}<p>{{ p }}</p>{% endfor %}
+  </div>
+</article>
+
+<div class="gfn-issue-sections">
+  {% for s in issue.sections %}
+  <section>
+    {{ sectionHeading("// " + (s.heading | upper), s.heading, s.color) }}
+    <div class="gfn-items">
+      {% for it in s.items %}
+      <div class="gfn-card gfn-item-card" style="--gfn-tone:{{ s.color }}">
+        <h3>{{ it.title }}</h3>
+        {% if it.text %}<p>{{ it.text }}</p>{% endif %}
+        {% if it.sources.length %}
+        <div class="gfn-item-card__sources">
+          <span class="lbl">{{ "Fontes" if it.sources.length > 1 else "Fonte" }}</span>
+          {% for src in it.sources %}
+          <a href="{{ src.href }}" target="_blank" rel="noopener" class="gfn-source-chip">{{ src.label }} {% icon "arrow-up-right", 14 %}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+
+<section class="gfn-issue-cta">
+  <div class="gfn-issue-cta__inner">
+    <div class="gfn-issue-cta__kicker">// Próxima edição: {{ issue.ctaNextDateFormatted }}</div>
+    <h2>Não perde a #{{ issue.ctaNextNumero }}</h2>
+    {{ linkedinCta(true) }}
+  </div>
+</section>

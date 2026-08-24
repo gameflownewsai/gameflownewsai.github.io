@@ -1,0 +1,22 @@
+<footer class="gfn-footer">
+  <div class="gfn-footer__inner">
+    <div class="gfn-footer__about">
+      {% logo 24 %}
+      <p>Curadoria semanal de IA aplicada à indústria de games — para toda a cadeia de produção, não só para quem escreve código.</p>
+    </div>
+    <div class="gfn-footer__col">
+      <div class="lbl">Beats</div>
+      {% for key in site.beatOrder %}
+      <a href="/#secoes">{{ site.beats[key].label }}</a>
+      {% endfor %}
+      <a href="/#secoes">{{ site.beats.ia.label }}</a>
+    </div>
+    <div class="gfn-footer__col">
+      <div class="lbl">Cadência</div>
+      <div class="row">{% icon "calendar-days", 16 %} Terças, 9h BRT</div>
+      <div class="row">{% icon "mail", 16 %} E-mail e web</div>
+      <div class="row">{% icon "rss", 16 %} RSS aberto</div>
+    </div>
+  </div>
+  <div class="gfn-footer__bottom">GameFlowNews.AI · gameflownewsai.github.io</div>
+</footer>

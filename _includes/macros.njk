@@ -1,0 +1,18 @@
+{% macro linkedinCta(compact=false, note="", label="") %}
+<div class="gfn-subscribe{% if compact %} gfn-subscribe--compact{% endif %}">
+  <a class="gfn-btn gfn-btn--gradient{% if not compact %} gfn-btn--lg{% endif %}" href="{{ site.linkedinFollowUrl }}" target="_blank" rel="noopener">
+    {% icon "linkedin", 17 %}
+    {{ label if label else "Assinar no LinkedIn" }}
+  </a>
+  <div class="gfn-subscribe__note">{{ note if note else "Direto no seu feed do LinkedIn. Grátis, cancele quando quiser." }}</div>
+</div>
+{% endmacro %}
+
+{% macro sectionHeading(kicker, title, color="var(--flow-1)") %}
+<div class="gfn-section-heading" style="--gfn-tone:{{ color }}">
+  <div>
+    <div class="gfn-section-heading__kicker">{{ kicker }}</div>
+    <h2>{{ title }}</h2>
+  </div>
+</div>
+{% endmacro %}
