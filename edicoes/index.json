@@ -1,5 +1,14 @@
 [
   {
+    "numero": 4,
+    "slug": "004",
+    "titulo": "GameFlowNews.ai #4: Modelo Mais Barato, Vídeo Open Source e QA com Visão Computacional",
+    "data": "2026-09-08",
+    "resumo": "Essa semana no GFN.Ai você vai encontrar: um panorama de que a fronteira de modelo de IA ficou mais barata e mais parelha em agosto, o que muda a conta na hora de escolher o cérebro por trás de uma feature do seu jogo. Outro lance maneiro...",
+    "linkedin_url": "",
+    "arquivo": "edicoes/004.md"
+  },
+  {
     "numero": 3,
     "slug": "003",
     "titulo": "GameFlowNews.ai #3: Ideação com IA, NPCs de Memória e QA Autônomo",
